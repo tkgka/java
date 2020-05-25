@@ -4,7 +4,7 @@ public class GSM10 {
 
 	public static void main(String[] args) {
 		int v = MyUtil.hap(10, 20);
-		float vv= MyUtil.hap(10.5f, 25.6f);
+		float vv= MyUtil.hap_float_float(10.5f, 25.6f);
 		System.out.println(v);
 		System.out.println(vv);
 		

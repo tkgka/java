@@ -8,10 +8,11 @@ public class MyUtil {
 		return a+b;
 	}
 	
-	public static float hap(float a, float b) {
+	public static float hap_float_float(float a, float b) {
 		return a+b;
 	}
 	
-
+	
+	
 
 }
