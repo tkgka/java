@@ -39,9 +39,5 @@ public class JBDC07 {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		
-
 	}
-
 }
