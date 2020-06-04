@@ -1,0 +1,49 @@
+package kr.gsm;
+import java.sql.*;
+import java.util.*;
+public class MemberDAO {
+	
+	private Connection conn;
+	private PreparedStatement ps;
+	private ResultSet rs;
+	
+	public Connection getDBconnect() {
+		String URL="jdbc:oracle:thin:@127.0.0.1:1521:XE";
+        String user="hr";
+        String password="hr";
+        
+        try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			conn = DriverManager.getConnection(URL, user, password);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        return conn;
+        
+        
+	}
+	// memInsert()
+	
+	public void memInsert(MenberVO vo) {
+		
+	}
+	
+	
+	
+	
+	public void dbClose() {
+		
+			try {
+				if(rs!=null)rs.close();
+				if(ps!=null)ps.close();
+				if(conn!=null)conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		
+			
+	}
+	
+
+}

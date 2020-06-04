@@ -22,12 +22,11 @@ public class JDBC10 {
 		
 		int cnt = dao.memUpdate(vo);
 		if(cnt>0) {
-			System.out.println("성공");
+			System.out.println("Update성공");
 		}else {
 			System.out.println("실패");
 		}
 		
-
 	}
 
 }

@@ -1,6 +1,8 @@
 package kr.gsm;
 import java.sql.*;
 import java.util.*;
+
+import kr.gsm.menberVO;
 public class MemberDAO {
 	
 	private Connection conn;
@@ -79,6 +81,48 @@ public class MemberDAO {
 			}
 		
 			
+	}
+
+	public int memDelete(String id) {
+		
+		conn = getDBconnect();
+		String SQL = "delete from tblmem where id=?";
+		int cnt=0;
+		
+		try {
+			ps = conn.prepareStatement(SQL);
+			ps.setString(1, id);
+			cnt = ps.executeUpdate();
+		}catch(Exception E) {
+			E.printStackTrace();
+		} finally {
+			dbClose();
+		}
+		return cnt;
+	}
+	
+	public List<menberVO> getAllList() {
+		conn = getDBconnect();
+		List<menberVO> list = new ArrayList<menberVO>();
+		String SQL ="select * from tblmem";
+		try {
+			ps = conn.prepareStatement(SQL);
+			rs = ps.executeQuery();
+			while(rs.next()){
+				String id = rs.getString("id");
+				String pwd = rs.getString("pwd");
+				int age = rs.getInt("age");
+				
+				menberVO vo = new menberVO(id,pwd,age);
+				list.add(vo);
+			}
+			
+		}catch(Exception E) {
+			E.printStackTrace();
+		}finally {
+			dbClose();
+		}
+		return list;
 	}
 	
 

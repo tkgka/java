@@ -1,5 +1,8 @@
 package kr.gsm;
+import java.util.Scanner;
 
+import kr.gsm.MemberDAO;
+import kr.gsm.menberVO;
 public class menberVO {
 	private String id;
 	private String pwd;
