@@ -1,3 +1,0 @@
-INDEX VERSION 1.131
-C:\GSM\workspace\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3558956716.index
-\BookERP\src
